@@ -1,0 +1,37 @@
+Metrics/LineLength:
+  Max: 120
+
+Metrics/AbcSize:
+  Enabled: false
+
+Layout/MultilineOperationIndentation:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/Encoding:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+TrailingWhitespace:
+  Enabled: false
+
+AlignParameters:
+  Enabled: false
+
+MethodLength:
+  Max: 50
+
+CyclomaticComplexity:
+  Enabled: false
+
+TrivialAccessors:
+  Enabled: true
+  ExactNameMatch: true
+
+Naming/FileName:
+  Enabled: false
+
