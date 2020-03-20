@@ -116,5 +116,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# custom
+# Custom settings
+
+# Golang
+export GOPATH="$HOME/.go"
+
+# Pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Direnv
 eval "$(direnv hook bash)"
+
