@@ -1,5 +1,6 @@
 [core]
 	autocrlf = input
+	excludesfile = /home/xcdr/.gitignore_global
 [user]
 	name = Adam Kubica
 	email = xcdr@kaizen-step.com
