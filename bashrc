@@ -118,34 +118,6 @@ fi
 
 # Custom settings
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    export PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    export PATH="$HOME/.local/bin:$PATH"
-fi
-
-# Golang
-export GOPATH="$HOME/.go"
-
-# Pyenv
-if [ -d "$HOME/.pyenv/bin" ] ; then
-    export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
-# Poetry
-if [ -d "$HOME/.poetry/bin" ] ; then
-    export PATH="$HOME/.poetry/bin:$PATH"
-fi
-
-# Direnv
-eval "$(direnv hook bash)"
-
 show_virtual_env() {
   if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
     echo "($(basename $VIRTUAL_ENV))"
@@ -153,5 +125,41 @@ show_virtual_env() {
 }
 
 export -f show_virtual_env
+
 PS1='$(show_virtual_env)'$PS1
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ]; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Direnv
+eval "$(direnv hook bash)"
+
+# Golang
+export GOPATH="$HOME/.go"
+
+# Poetry
+if [ -d "$HOME/.poetry/bin" ]; then
+    export PATH="$HOME/.poetry/bin:$PATH"
+fi
+
+# Pyenv
+if [ -d "$HOME/.pyenv/bin" ]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+# RVM
+export PATH="$HOME/.rvm/bin:$PATH"
+
+if [ -s "$HOME/.rvm/scripts/rvm" ]; then
+    source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
 
