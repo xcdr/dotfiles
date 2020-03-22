@@ -1,36 +1,45 @@
-Metrics/LineLength:
-  Max: 120
-
 Metrics/AbcSize:
   Enabled: false
 
+Metrics/MethodLength:
+  Max: 50
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+
 Layout/MultilineOperationIndentation:
+  Enabled: false
+
+Layout/TrailingWhitespace:
   Enabled: false
 
 Style/NumericLiterals:
   Enabled: false
 
+Layout/ParameterAlignment:
+  Enabled: false
+
 Style/Encoding:
   Enabled: false
 
-Documentation:
+Style/Documentation:
   Enabled: false
 
-TrailingWhitespace:
-  Enabled: false
-
-AlignParameters:
-  Enabled: false
-
-MethodLength:
-  Max: 50
-
-CyclomaticComplexity:
-  Enabled: false
-
-TrivialAccessors:
+Style/TrivialAccessors:
   Enabled: true
   ExactNameMatch: true
+
+Style/HashEachMethods:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
 
 Naming/FileName:
   Enabled: false
