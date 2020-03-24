@@ -118,6 +118,8 @@ fi
 
 # Custom settings
 
+umask 022 # not set by default on WSL
+
 show_virtual_env() {
   if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
     echo "($(basename $VIRTUAL_ENV))"
