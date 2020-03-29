@@ -140,36 +140,42 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
-# Direnv
+# See: https://direnv.net/
 eval "$(direnv hook bash)"
 
-# Golang
+# See: https://golang.org/
 export GOPATH="$HOME/.go"
 
-# Poetry
+# See: https://python-poetry.org/
 if [ -d "$HOME/.poetry/bin" ]; then
     export PATH="$HOME/.poetry/bin:$PATH"
 fi
 
-# Pyenv
+# See: https://github.com/pyenv/pyenv
 if [ -d "$HOME/.pyenv/bin" ]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
 
-# NVM
+# See: https://github.com/nvm-sh/nvm
 if [ -d "$HOME/.nvm" ]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
-# RVM
+# See: https://rvm.io/
 export PATH="$HOME/.rvm/bin:$PATH"
 
 if [ -s "$HOME/.rvm/scripts/rvm" ]; then
     source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
+
+# See: https://github.com/magicmonty/bash-git-prompt
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source $HOME/.bash-git-prompt/gitprompt.sh
 fi
 
 # Local
