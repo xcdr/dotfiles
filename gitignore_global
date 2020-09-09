@@ -4,3 +4,6 @@
 
 .envrc
 .env
+
+*.bak
+*.tmp
