@@ -141,6 +141,11 @@ eval "$(direnv hook bash)"
 # See: https://golang.org/
 export GOPATH="$HOME/.go"
 
+# set PATH so it includes golang bin if it exists
+if [ -d "$HOME/.go/bin" ]; then
+    export PATH="$HOME/.go/bin:$PATH"
+fi
+
 # See: https://python-poetry.org/
 if [ -d "$HOME/.poetry/bin" ]; then
     export PATH="$HOME/.poetry/bin:$PATH"
@@ -150,7 +155,10 @@ fi
 if [ -d "$HOME/.pyenv/bin" ]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+
+    if [ -d "$HOME/.pyenv/plugins/pyenv-virtualenv" ]; then
+        eval "$(pyenv virtualenv-init -)"
+    fi
 fi
 
 # See: https://github.com/nvm-sh/nvm
