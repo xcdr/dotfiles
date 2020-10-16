@@ -15,7 +15,7 @@ end_of_line = crlf
 [*.{cs,js}]
 indent_size = 4
 
-[*.json]
+[*.json,*.yml]
 indent_size = 2
 
 [*.{rb,rake,haml,erb}]
