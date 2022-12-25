@@ -1,15 +1,15 @@
 [core]
-	autocrlf = input
-	excludesfile = /home/xcdr/.gitignore_global
+    autocrlf = input
+    excludesfile = /home/xcdr/.gitignore_global
 [user]
-	name = Adam Kubica
-	email = xcdr@kaizen-step.com
+    name = Adam Kubica
+    email = xcdr@kaizen-step.com
 [alias]
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 [color]
     ui = auto
     diff = auto
@@ -21,4 +21,4 @@
 [include]
     path = ~/.gitconfig_local
 [init]
-	defaultBranch = main
+    defaultBranch = main
