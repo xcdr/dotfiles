@@ -1,6 +1,7 @@
 .vscode
 .direnv
 .venv
+.pytest_cache
 
 .envrc
 .env
