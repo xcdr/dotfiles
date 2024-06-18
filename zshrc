@@ -66,15 +66,16 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+source $ZSH/oh-my-zsh.sh
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(direnv)
-plugins=(direnv pyenv)
 
-source $ZSH/oh-my-zsh.sh
+plugins=(pyenv)
 
 # User configuration
 
@@ -117,6 +118,9 @@ source $ZSH/oh-my-zsh.sh
 if [ -d "$HOME/bin" ]; then
     export PATH="$HOME/bin:$PATH"
 fi
+
+# See: https://direnv.net/
+eval "$(direnv hook zsh)"
 
 # See: https://golang.org/
 export GOPATH="$HOME/.go"
